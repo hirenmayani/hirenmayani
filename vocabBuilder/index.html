@@ -3,8 +3,29 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Vocab Builder</title>
+<script type="text/javascript">
+function fetchData()
+{
+	var limit =5;
+	var URL = "http://api.wordnik.com:80/v4/word.json/"+document.getElementById("word").value+"/examples?includeDuplicates=false&useCanonical=false&skip=0&limit="+limit+"&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5";
+	
+	document.getElementById("output").innerHTML=httpGet(URL);
+	}
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+</script>
 </head>
 <body>
-Working
+<a href= "http://www.hirenmayani.com/">Home</a>
+<H1>Vocab Builder</H1>
+<h2>This will give you few Sentences for given word.</h2>
+	Enter Word : <input type="text" name="word" id="word"><br>
+	<button name="fetch" onclick="fetchData">Fetch Sentences</button><br>
+	<div id="output"></div>
 </body>
 </html>
