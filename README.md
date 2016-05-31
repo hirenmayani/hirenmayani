@@ -1,2 +1,2 @@
 # hirenmayani
-to host my perosnal website.
+to host my personal website hirenmayani.com.
