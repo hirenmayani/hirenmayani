@@ -1,245 +1,707 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+ 
+<style>
+.fix-nav {
+ /* this make our menu fixed top */
+    z-index: 9999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.fix-body {
+ /* this will adjust body top margin to prevent content jumping when nav gets fix  */
+    margin-top: 50px;
+ /* adjust as per height of your menu */;
+}
+.navbar1 {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+</style>
+
 <title>Hiren Mayani</title>
+<!--mobile apps-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="About Me" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--mobile apps-->
+<!--Custom Theme files-->
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+<link rel="stylesheet" href="css/swipebox.css">
+<!--//Custom Theme files-->
+<!--js-->
+<script src="js/jquery-1.11.1.min.js"  type="text/javascript"></script> 
+<!-- //js -->
+<!--web-fonts-->
+<link href='//fonts.googleapis.com/css?family=Overlock:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<!--//web-fonts-->
+<!--start-smooth-scrolling-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>	
 
-<!-- Google fonts -->
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
-
-
-<!-- font awesome -->
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
-<!-- bootstrap -->
-<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
-
-<!-- animate.css -->
-<link rel="stylesheet" href="assets/animate/animate.css" />
-
-
-<!-- gallery -->
-<link rel="stylesheet" href="assets/gallery/blueimp-gallery.min.css">
-
-<!-- favicon -->
-<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-<link rel="icon" href="images/favicon.png" type="image/x-icon">
-
-<link rel="stylesheet" type="text/css" href="assets/slidingheader/layout-simple.css" />
-
-
-
-<link rel="stylesheet" href="assets/style.css">
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-101652046-1', 'auto');
-  ga('send', 'pageview');
-
+<script type="text/javascript">
+  jQuery("document").ready(function($){
+    var nav = $('.nav-container');
+    var pos = nav.offset().top;
+    
+    
+    $(window).scroll(function () {
+      var fix = ($(this).scrollTop() > pos) ? true : false;
+      nav.toggleClass("fix-nav", fix);
+      $('body').toggleClass("fix-body", fix);
+      
+    });
+  });
 </script>
+<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+</script>
+<!--//end-smooth-scrolling-->
 </head>
-
-<body id="home">
-		<div id="container">
-			<header class="intro">
-				<div class="intro__content">
-					<h1>Hiren Mayani</h1>					
-						
-						
-						<button class="trigger">						
-							<svg width="100%" height="100%" viewBox="0 0 60 60" preserveAspectRatio="none">
-								<g class="icon icon--grid">
-									<rect x="32.5" y="5.5" width="22" height="22"/>
-									<rect x="4.5" y="5.5" width="22" height="22"/>
-									<rect x="32.5" y="33.5" width="22" height="22"/>
-									<rect x="4.5" y="33.5" width="22" height="22"/>
-								</g>
-								<g class="icon icon--cross">
-									<line x1="4.5" y1="55.5" x2="54.953" y2="5.046"/>
-									<line x1="54.953" y1="55.5" x2="4.5" y2="5.047"/>
-								</g>
-							</svg>
-							<span>View content</span>
-						</button>
-				</div><!-- /intro__content -->
-			</header><!-- /intro -->
-			
-			<section class="items-wrap">
-		<!--	<div class="container">
-				<div class="spacer">
-				<div class="row">
-					<div class="col-sm-4 fadeInUp wowload">
-						<div class="gallery-items">
-						<img class="img-responsive" src="images/portfolio/1.jpg" alt="item01"/>						
-						<div class="caption"><h3>Fashion Website</h3> <a href="images/portfolio/1.jpg" title="Fashion Website" class="gallery-image btn btn-default" data-gallery>View Details</a></div>
-						</div>
-					</div>
-
-					<div class="col-sm-4 fadeInUp wowload">
-						<div class="gallery-items">
-						<img class="img-responsive" src="images/portfolio/2.jpg" alt="item01"/>						
-						<div class="caption"><h3>Digial Agency</h3> <a href="images/portfolio/2.jpg" title="Digial Agency" class="gallery-image btn btn-default" data-gallery>View Details</a></div>
-						</div>
-					</div>
-
-					<div class="col-sm-4 fadeInUp wowload">
-						<div class="gallery-items">
-						<img class="img-responsive" src="images/portfolio/3.jpg" alt="item01"/>						
-						<div class="caption"><h3>Music</h3> <a href="images/portfolio/3.jpg" title="Music" class="gallery-image btn btn-default" data-gallery>View Details</a></div>
-						</div>
-					</div>
-
-
-					<div class="col-sm-4 fadeInUp wowload">
-						<div class="gallery-items">
-						<img class="img-responsive" src="images/portfolio/5.jpg" alt="item01"/>						
-						<div class="caption"><h3>Portfolio</h3> <a href="images/portfolio/5.jpg" title="Portfolio" class="gallery-image btn btn-default" data-gallery>View Details</a></div>
-						</div>
-					</div>
-
-					<div class="col-sm-4 fadeInUp wowload">
-						<div class="gallery-items">
-						<img class="img-responsive" src="images/portfolio/4.jpg" alt="item01"/>						
-						<div class="caption"><h3>Monkey</h3> <a href="images/portfolio/4.jpg" title="Monkey" class="gallery-image btn btn-default" data-gallery>View Details</a></div>
-						</div>
-					</div>
-
-					
-
-					<div class="col-sm-4 fadeInUp wowload">
-						<div class="gallery-items">
-						<img class="img-responsive" src="images/portfolio/6.jpg" alt="item01"/>						
-						<div class="caption"><h3>Portfolio</h3> <a href="images/portfolio/6.jpg" title="Portfolio" class="gallery-image btn btn-default" data-gallery>View Details</a></div>
-						</div>
-					</div>
-
-					<div class="col-sm-4 fadeInUp wowload">
-						<div class="gallery-items">
-						<img class="img-responsive" src="images/portfolio/7.jpg" alt="item01"/>						
-						<div class="caption"><h3>Realestate</h3><a href="images/portfolio/7.jpg" title="Realestate" class="gallery-image btn btn-default" data-gallery>View Details</a></div>
-						</div>
-					</div>
-
-					<div class="col-sm-4 fadeInUp wowload">
-						<div class="gallery-items">
-						<img class="img-responsive" src="images/portfolio/8.jpg" alt="item01"/>						
-						<div class="caption"><h3>Hote Website</h3> <a href="images/portfolio/8.jpg" title="Hotel Gallery" class="gallery-image btn btn-default" data-gallery>View Details</a></div>
-						</div>
-					</div>
-
-					<div class="col-sm-4 fadeInUp wowload">
-						<div class="gallery-items">
-						<img class="img-responsive" src="images/portfolio/1.jpg" alt="item01"/>						
-						<div class="caption"><h3>Fashion</h3> <a href="images/portfolio/1.jpg" title="Fashion" class="gallery-image btn btn-default" data-gallery>View Details</a></div>
-						</div>
-					</div>
-
-					<div class="col-sm-4 fadeInUp wowload">
-						<div class="gallery-items">
-						<img class="img-responsive" src="images/portfolio/4.jpg" alt="item01"/>						
-						<div class="caption"><h3>Monkey</h3> <a href="images/portfolio/4.jpg" title="Monkey" class="gallery-image btn btn-default" data-gallery>View Details</a></div>
-						</div>
-					</div>
-
-					<div class="col-sm-4 fadeInUp wowload">
-						<div class="gallery-items">
-						<img class="img-responsive" src="images/portfolio/5.jpg" alt="item01"/>						
-						<div class="caption"><h3>Profile</h3><a href="images/portfolio/5.jpg" title="Profile" class="gallery-image btn btn-default" data-gallery>View Details</a></div>
-						</div>
-					</div>
-
-					<div class="col-sm-4 fadeInUp wowload">
-						<div class="gallery-items">
-						<img class="img-responsive" src="images/portfolio/6.jpg" alt="item01"/>						
-						<div class="caption"><h3>Portfolio</h3> <a href="images/portfolio/6.jpg" title="Portfolio" class="gallery-image btn btn-default" data-gallery>View Details</a></div>
-						</div>
-					</div>
-
-
+<body>
+	<!--banner-->
+	<div id="home" class="banner">
+		<div class="banner-info">
+			<div class="container">
+				<div class="col-md-4 header-left" >
+					<img style='height: 70%; width: 70%; object-fit: contain' src="images/dp.png" alt="" vspace="20%"/>
 				</div>
+				<div class="col-md-8 header-right">
+					<h2>Hello</h2>
+					<h1>I'm Hiren Mayani</h1>
+					<h6>Software Engineer and Developer</h6>
+					<ul class="address">
+						<li>
+							<ul class="address-text">
+								<li><b>PHONE </b></li>
+								<li>+1-631-590-9957</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>ADDRESS </b></li>
+								<li>700 Health Sciences Drive, Chapin Apartments H-1115A, Stony Brook, NY</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>E-MAIL </b></li>
+								<li><a href="mailto:hmayani@cs.stonybrook.edu">hmayani@cs.stonybrook.edu</a>/<a href="mailto:mayanihiren@gmail.com">mayanihiren@gmail.com</a></li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>LINKEDIN </b></li>
+								<li><a href="https://www.linkedin.com/in/hirenmayani" target="_blank">https://www.linkedin.com/in/hirenmayani</a></li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>GITHUB </b></li>
+								<li><a href="https://github.com/hirenmayani" target="_blank">https://github.com/hirenmayani</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--//banner-->
+	<!--top-nav-->
+	<div class="top-nav wow nav-container">
+		<div class="container">
+			<div class="navbar-header logo">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					Menu
+				</button>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<div class="menu">
+					<ul class="nav navbar">
+						<li><a href="#about" class="scroll">About</a></li>
+						<li><a href="#work" class="scroll">Experience</a></li>
+						<li><a href="#education" class="scroll">Education</a></li>
+						<li><a href="#skills" class="scroll">Skills</a></li>
+						<li><a href="#projects" class="scroll">My Projects</a></li>
+						<li><a href="#contact" class="scroll">Contact</a></li>
+					</ul>
+					<div class="clearfix"> </div>
 				</div>
 			</div>
--->			</section>
+		</div>
+	</div>	
+	<!--//top-nav-->
+	<!--about-->
+	<div id="about" class="about">
+		<div class="container">
+			<h3 class="title"> About Me</h3>
+			<div class="col-md-8 about-left">
+				<p>Currently pursuing Masters at Stony Brook University with major in Computer Science. My area of interests/expertise are algorithms, Big Data analytics, database, full-stack web development and testing. Actively seeking summer internship (May'18) as Software Engineer/Developer.</p><br>
+				<p>Background:Proficient in application design and development, database, automation, data processing and mining. Prior experience in various Java frameworks, tools and enterprise library as well as with software development life cycle models and involved in all phases of product life cycle.</p><br>
+				<p>Hobbies:solving puzzles and coding challenges;Playing table-tennis, chess;cooking;travelling;</p>
+			</div>
+			<div class="col-md-4 about-right">
+				<img style='height: 150%; width: 150%; object-fit: contain'src="images/wordCloud.png" alt="" />
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!--//about-->
+	<!--work-experience-->
+	<div id="work" class="work">
+		<div class="container">
+			<h3 class="title">Work Experience</h3>
+			<div class="work-info"> 
+				<div class="col-md-6 work-left"> 
+					<h4>Sept 2015 - July 2017</h4>
+				</div>
+				<div class="col-md-6 work-right"> 
+					<h5><span class="glyphicon glyphicon-briefcase"> </span> EdgeVerve Systems Limited </h5>
+					<p>Worked on COMPASS - A product developed to design and manage next-gen workplaces.<br>
+					<ul style="color:#999;">
+						<li>Developed machine learning models to predict whether the user will show up or not with the help of classification algorithms(SVM, Logistic Regression, random forest, naive bayes etc.) in R. Final model was having 81% accuracy.</li>
+						<li>Single-handedly developed an application using Elasticsearch, Java and Kibana to analyze live email log data.</li>
+						<li>Developed a distributed web-application to reserve workspaces using MongoDB and node.js. To ensure high availability and latency of the system, application was deployed on the 4 nodes and database was distributed over 6 shards. </li>
+						<li>Developed and tested(unit & functional) automation scripts to perform routine tasks using Java and oracleDB.</li>
+						<li>Technologies: Java, BPEL, ELK, node.js, MongoDB, R, Tableau</li></ul></p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="work-info"> 
+				<div class="col-md-6 work-right work-right2"> 
+					<h4>May `15 - Aug `15</h4>
+				</div>
+				<div class="col-md-6 work-left work-left2"> 
+					<h5> Infosys <span class="glyphicon glyphicon-briefcase"> </span></h5>
+					<p> Underwent Foundation Training Program, intensive 20-week training conducted by Infosys Global Education Center and excelled in the training program with specialized training in JAVA, Tableau, testing and became Top Performer.</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="work-info"> 
+				<div class="col-md-6 work-left"> 
+					<h4>Dec `14 - Apr `14, Dec `14 – Mar `15</h4>
+				</div>
 				
-		</div><!-- /container -->
-
-
-
-
-<div class="about">
-	<div class="overlay spacer text-center">
-	<div class="container">
-	<h2><marquee direction="left"> Website under construction...</marquee></h2>
-	<p>I'm working as a Product Engineer in the R&D team of <a target="_blank" href="https://www.edgeverve.com/">EdgeVerve Systems</a>. I'm also volunteering at <a target="_blank" href="http://www.becomingifoundation.org/">Becoming I Foundation</a> as an educator and a recruiter.  I've completed B.Tech in Computer Science from <a target="_blank" href="http://www.ddu.ac.in">Dharmsinh Desai University, India</a> and have done summer internship and final semester training at vadodara  based start-up <a target="_blank" href="http://www.purpledocs.com">PurpleDocs</a>.</p>
-	<p>I like to play with data and algorithms. I love coding and I believe that 'There is nothing that a code can't do'. I love to work on the projects which directly impacts on common people's lives.</p>
-<!--	<p>I would define myself as a travelbuff, iconoclastic, coder, dreamer, doer and adrenaline junkie.</p> -->
-	<p>Here are some links to get in touch with me.</p>
-	<div class="wowload fadeInUp social">
-		<a target="_blank" href="http://in.linkedin.com/in/hirenmayani" ><img src="./images/icons/linkedin.png" title="linkedin"></a>
-		<a target="_blank" href="https://github.com/hirenmayani/"><img src="./images/icons/github.png" title="github"></a>
-		<a target="_blank" href="https://www.quora.com/profile/Hiren-Mayani/"><img width="30" height="30" src="./images/icons/quora2.png" title="Quora"></a>
-		<a target="_blank" href="mailto:mayanihiren@gmail.com"><img src="./images/icons/email.png" title="email"></a>
-		<a target="_blank" href="./Hiren_mayani_Resume.pdf" target="_new"><img src="./images/icons/resume.png" title="resume"></a> 
-		<a target="_blank" href="https://www.facebook.com/hirenmayani"><img src="./images/icons/facebook.png" title="facebook"></a>
-		<a target="_blank" href="https://www.twitter.com/hirenmayani"><img src="./images/icons/twitter.png" title="twitter"></a>
-		<a target="_blank" href="https://www.instagram.com/hiren_mayani"><img src="./images/icons/instagram.png" title="instagram"></a>
-		<a target="_blank" href="https://www.hackerrank.com/hirenmayani"><img src="./images/icons/hackerrank.png" title="hackerrank"></a>
-		<a target="_blank" href="https://sayat.me/hirenm"><img src="./images/icons/resume.png" title="say anything anonymously"></a>
+				<div class="col-md-6 work-right"> 
+					<h5><span class="glyphicon glyphicon-briefcase"> </span> PurpleDocs</h5>
+					<p>
+					     Worked on digitalizing million+ paper-based medical documents and making them available online using cloud application.
+						<ul style="color:#999;">
+							<li>Contributed in migration from SQLite to MySQL based web application.</li>
+							<li>	Developed Java utility to extract data from Excel files and store it in a database.</li>
+							<li>	Technologies: Java, HTML, CSS3, js, Ajax, Restlet, mySQL</li>
+						</ul>
+					
+					</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
 	</div>
-
+	<!--//work-experience-->
+	<!--education-->
+	<div id="education" class="education">
+		<div class="container">
+			<h3 class="title">Education</h3>
+			<div class="work-info"> 
+				<div class="col-md-6 work-left"> 
+					<h4>Master Degree (Computer Science) - 2018</h4>
+				</div>
+				<div class="col-md-6 work-right"> 
+					<h5><span class="glyphicon glyphicon-education"> </span> Stony Brook University, New York</h5>
+					<p>Coursework: Analysis of Algorithm, Big Data Analysis, Computer Vision, Artificial Intelligence</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="work-info"> 
+				<div class="col-md-6 work-right work-right2"> 
+					<h4>Bachelors Degree (Computer Science) - 2015</h4>
+				</div>
+				<div class="col-md-6 work-left work-left2"> 
+					<h5> Dharmsinh Desai University, India <span class="glyphicon glyphicon-education"></span></h5>
+					<p>Coursework: Data structures, Design & Analysis of Algorithms, Knowledge Discovery, Image Processing, Artificial Intelligence, Software Engineering, Object Oriented Modeling, Operating Systems, Database System etc</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
 	</div>
+	<!--//education-->
+	<!--skills-->
+	<div id="skills" class="skills">
+		<div class="container">
+			<h3 class="title">Skills</h3>
+			<div class="skills-info">
+				<div class="col-md-6 bar-grids">
+					<h6>Software Design & Development <span> 90% </span></h6>
+					<div class="progress">
+						<div class="progress-bar progress-bar-striped active" style="width: 70%">
+						</div>
+					</div>
+					<h6>SOFTWARE TESTING<span>70% </span></h6>
+					<div class="progress">
+						<div class="progress-bar progress-bar-striped active" style="width: 90%">
+						</div>
+					</div>
+					<h6>Java Programming<span> 99% </span></h6>
+					<div class="progress">
+						<div class="progress-bar progress-bar-striped active" style="width: 99%">
+						</div>
+					</div>					
+					<h6>Python Programming<span> 70% </span></h6>
+					<div class="progress">
+						<div class="progress-bar progress-bar-striped active" style="width: 99%">
+						</div>
+					</div>					
+					<h6>Relational Databases <span>90% </span></h6>
+					<div class="progress">
+						<div class="progress-bar progress-bar-striped active" style="width: 80%">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 bar-grids">
+					<h6>Big Data Analysis <span> 75% </span></h6>
+					<div class="progress">
+						<div class="progress-bar progress-bar-striped active" style="width: 55%">
+						</div>
+					</div>
+					<h6>Machine Learning<span> 65% </span></h6>
+					<div class="progress">
+						<div class="progress-bar progress-bar-striped active" style="width: 65%">
+						</div>
+					</div>
+					<h6>Visualisation <span> 70% </span></h6>
+					<div class="progress">
+						<div class="progress-bar progress-bar-striped active" style="width: 50%">
+						</div>
+					</div>
+					<h6>NoSQL Databases<span>90% </span></h6>
+					<div class="progress">
+						<div class="progress-bar progress-bar-striped active" style="width: 70%">
+						</div>
+					</div>					
+					<h6>Web Design & Development <span> 90% </span></h6>
+					<div class="progress">
+						<div class="progress-bar progress-bar-striped active" style="width: 85%">
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
 	</div>
-</div>
-
-<div class="text-center copyright"> <a href=""></a></div>
-
-
-<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-    <!-- The container for the modal slides -->
-    <div class="slides"></div>
-    <!-- Controls for the borderless lightbox -->
-    <h3 class="title">title</h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <!-- The modal dialog, which will be used to wrap the lightbox content -->    
-</div>
-
-
-
-
-
-<!-- jquery -->
-<script src="assets/jquery.js"></script>
-
-<!-- wow script -->
-<script src="assets/wow/wow.min.js"></script>
-
-<!-- slider -->
-<script src="assets/slidingheader/classie.js"></script>
-
-
-<!-- boostrap -->
-<script src="assets/bootstrap/js/bootstrap.js" type="text/javascript" ></script>
-
-<!-- jquery mobile -->
-<script src="assets/mobile/touchSwipe.min.js"></script>
-
-
-<!-- jquery mobile -->
-<script src="assets/respond/respond.js"></script>
-
-<!-- gallery -->
-<script src="assets/gallery/jquery.blueimp-gallery.min.js"></script>
-
-<!-- custom script -->
-<script src="assets/script.js"></script>
-
+	<!--//education-->
+	<!--portfolio-->
+	<!--
+	<div id="projects" class="portfolio">
+		<div class="container">
+			<h3 class="title wow zoomInLeft animated" data-wow-delay=".5s">Academic Projects</h3>
+			<div class="sap_tabs">			
+				<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+					<ul class="resp-tabs-list wow fadeInUp animated" data-wow-delay=".7s">
+						<li class="resp-tab-item"><span>All</span></li>
+						<li class="resp-tab-item"><span>Big Data</span></li>
+						<li class="resp-tab-item"><span>Systems</span></li>
+						<li class="resp-tab-item"><span>Web</span></li>
+						<li class="resp-tab-item"><span>Visualisation</span></li>
+						<li class="resp-tab-item"><span>Others</span></li>				
+					</ul>	
+					<div class="clearfix"> </div>	
+					<div class="resp-tabs-container">
+						<div class="tab-1 resp-tab-content">
+							<div class="tab_img">
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Million-Song-Project" target="_blank" Vclass="swipebox" title="Built a Song Recommendation System using both content-based and collaborative filtering on 10GB subset of MSD (Million Song Data) with a precision of 6.1%. Also performed trend analysis and visualization on MSD across the years, varying from song popularity to loudness.">
+											<img src="images/five.jpg" alt="Image 404" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Million Song Project</h3>
+												<p>Used: Apache Spark, Python</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Web-Application-Firewall" target="_blank" Vclass="swipebox" title="Designed a Web Application Firewall as an Apache module that “sits” in-front of a web server to recognize malicious requests using signatures and anomaly detection.The WAF recognizes malicious requests using signatures and anomaly detection. WAF is trained on Joolma Content Management System.">
+											<img src="images/four.jpg" alt="Image 404" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Web Application Firewall</h3>
+												<p>Used: Apache module, C</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Stackable-Tracing-File-System" target="_blank" Vclass="swipebox" title="Built a Stackable File System called “Trfs” to provide operation-tracing support for all the file system calls from the user land. All the trace records can be replayed from the user level.">
+											<img src="images/two.jpeg" alt="Image 404" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Stackable Tracing Filesystem</h3>
+												<p>Used: C, Kernel C, Linux</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Xmergesort-System-Call-in-Linux-Kernel" target="_blank" Vclass="swipebox" title="This project involved implementation of a new system call in Linux kernel that takes two or more input files, merge-sorts them, and produces an output file. All checks and validations were done at the system level. Also supported flags to determine various options of sorting.">
+											<img src="images/three.png" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>"xmergesort"​ System Call in Linux Kernel</h3>
+												<p>Used: C, Kernel C, Linux</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Packed-Suffix-Array" target="_blank" Vclass="swipebox" title="Programmed a suffix array along with associated functions using binary encoding and tested on real sequencing data.">
+											<img src="images/six.jpg" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Packed Suffix Array</h3>
+												<p>Used: C++, RapMap API</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="javascript:void(0);" Vclass="swipebox" title="Geocoding is a critical task for big spatial data based public health studies, and many other spatial oriented data analytics. Developing a highly scalable geocoding system that could support massive addresses with high accuracy. Using multiple databases, including TIGER, parcel data, OpenStreetMap, etc and building parallel queries through in-memory based database for scalable searching. Using NLP and rule engine for understanding the semantics of US addresses. The aim is to deliver the best open source geocoding system for the community.">
+											<img src="images/nine.jpg" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Geocoding System in Spatial Big Data Analytics</h3>
+												<p>Used: Java, Python, Solr, Sphinx, TigerMap, Open Street Map</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Virtual-Medical-Home" target="_blank" Vclass="swipebox" title="Conceptualized multi-level “Virtual Medical Home” through a series of web-enabled services and rendered a robust IR system capable of understanding bio-metrics, blood reports, X-rays, CT scans, etc. Provisioned with portals to schedule appointments, view medical prescriptions and send in inquiries pertaining to treatment follow-up">
+											<img src="images/one.jpg" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Virtual Medical Home</h3>
+												<p>Used: Java, JSP, Servlet, MySQL, HTML, CSS, AJAX, Javascript</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Pre-process-system-calls-vectors-support-in-Linux-Kernel" target="_blank" Vclass="swipebox" title="Modified the Linux kernel to support system calls (on x64) on a per-process basis. Each process can now execute different versions of a system call based on the system call vector it is assigned.">
+											<img src="images/ten.jpg" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Pre-process system calls vectors in Linux Kernel</h3>
+												<p>Used: C, Kernel C, Linux</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Student-DBMS" target="_blank" Vclass="swipebox" title="Designed Flat File Database Management System using C language as a light weight database application (14 KB). Implemented 2 level file indexing using AVL search tree and linked list to ensure efficient insertion, deletion and search operations">
+											<img src="images/seven.jpg" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Student Database Management System</h3>
+												<p>Used: C, file handling, data structures</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/hue" Vclass="swipebox" title="Hue (Hadoop User Experience) is an open-source Web interface that supports Apache Hadoop and its ecosystem, licensed under the Apache v2 license.">
+											<img src="images/fifteen.jpg" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Hadoop User Experience</h3>
+												<p>Used: Django framework, knockout.js, mako templates</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Visualisation-Final-Project" target="_blank" Vclass="swipebox" title="Visualizing the school donations using the data collected on www.donorschoose.org.">
+											<img src="images/thirteen.png" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Visualisation Final Project</h3>
+												<p>Used: Javascript, D3.js, NodeJS, HTML, CSS</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Advanced-Visualisation" target="_blank" Vclass="swipebox" title="Data Clustering, Decimation, Dimension reduction, PCA vectors via scatterplot and MDS (Euclidian and Correlation distance) in 2D">
+											<img src="images/fourteen.jpg" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Advanced Visualisation</h3>
+												<p>Used: Python, D3.js, Javascript, HTML, CSS</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="tab-1 resp-tab-content">
+							<div class="tab_img">
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Million-Song-Project" target="_blank" Vclass="swipebox" title="Built a Song Recommendation System using both content-based and collaborative filtering on 10GB subset of MSD (Million Song Data) with a precision of 6.1%. Also performed trend analysis and visualization on MSD across the years, varying from song popularity to loudness.">
+											<img src="images/five.jpg" alt="Image 404" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Million Song Project</h3>
+												<p>Used: Apache Spark, Python</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="javascript:void(0);" Vclass="swipebox" title="Geocoding is a critical task for big spatial data based public health studies, and many other spatial oriented data analytics. Developing a highly scalable geocoding system that could support massive addresses with high accuracy. Using multiple databases, including TIGER, parcel data, OpenStreetMap, etc and building parallel queries through in-memory based database for scalable searching. Using NLP and rule engine for understanding the semantics of US addresses. The aim is to deliver the best open source geocoding system for the community.">
+											<img src="images/nine.jpg" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Geocoding System in Spatial Big Data Analytics</h3>
+												<p>Used: Java, Python, Solr, Sphinx, TigerMap, Open Street Map</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/hue" Vclass="swipebox" title="Hue (Hadoop User Experience) is an open-source Web interface that supports Apache Hadoop and its ecosystem, licensed under the Apache v2 license.">
+											<img src="images/fifteen.jpg" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Hadoop User Experience</h3>
+												<p>Used: Django framework, knockout.js, mako templates</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="tab-1 resp-tab-content">
+							<div class="tab_img">
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Pre-process-system-calls-vectors-support-in-Linux-Kernel" target="_blank" Vclass="swipebox" title="Modified the Linux kernel to support system calls (on x64) on a per-process basis. Each process can now execute different versions of a system call based on the system call vector it is assigned.">
+											<img src="images/ten.jpg" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Pre-process system calls vectors in Linux Kernel</h3>
+												<p>Used: C, Kernel C, Linux</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Xmergesort-System-Call-in-Linux-Kernel" target="_blank" Vclass="swipebox" title="This project involved implementation of a new system call in Linux kernel that takes two or more input files, merge-sorts them, and produces an output file. All checks and validations were done at the system level. Also supported flags to determine various options of sorting.">
+											<img src="images/three.png" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>"xmergesort"​ System Call in Linux Kernel</h3>
+												<p>Used: C, Kernel C, Linux</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Stackable-Tracing-File-System" target="_blank" Vclass="swipebox" title="Built a Stackable File System called “Trfs” to provide operation-tracing support for all the file system calls from the user land. All the trace records can be replayed from the user level.">
+											<img src="images/two.jpeg" alt="Image 404" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Stackable Tracing Filesystem</h3>
+												<p>Used: C, Kernel C, Linux</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="tab-1 resp-tab-content">
+							<div class="tab_img">
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Virtual-Medical-Home" target="_blank" Vclass="swipebox" title="Conceptualized multi-level “Virtual Medical Home” through a series of web-enabled services and rendered a robust IR system capable of understanding bio-metrics, blood reports, X-rays, CT scans, etc. Provisioned with portals to schedule appointments, view medical prescriptions and send in inquiries pertaining to treatment follow-up">
+											<img src="images/one.jpg" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Virtual Medical Home</h3>
+												<p>Used: Java, JSP, Servlet, MySQL, HTML, CSS, AJAX, Javascript</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Web-Application-Firewall" target="_blank" Vclass="swipebox" title="Designed a Web Application Firewall as an Apache module that “sits” in-front of a web server to recognize malicious requests using signatures and anomaly detection.The WAF recognizes malicious requests using signatures and anomaly detection. WAF is trained on Joolma Content Management System.">
+											<img src="images/four.jpg" alt="Image 404" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Web Application Firewall</h3>
+												<p>Used: Apache module, C</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="tab-1 resp-tab-content">
+							<div class="tab_img">
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Visualisation-Final-Project" target="_blank" Vclass="swipebox" title="Visualizing the school donations using the data collected on www.donorschoose.org.">
+											<img src="images/thirteen.png" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Visualisation Final Project</h3>
+												<p>Used: Javascript, D3.js, NodeJS, HTML, CSS</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Advanced-Visualisation" target="_blank" Vclass="swipebox" title="Data Clustering, Decimation, Dimension reduction, PCA vectors via scatterplot and MDS (Euclidian and Correlation distance) in 2D">
+											<img src="images/fourteen.jpg" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Advanced Visualisation</h3>
+												<p>Used: Python, D3.js, Javascript, HTML, CSS</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="tab-1 resp-tab-content">
+							<div class="tab_img">
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Packed-Suffix-Array" target="_blank" Vclass="swipebox" title="Programmed a suffix array along with associated functions using binary encoding and tested on real sequencing data.">
+											<img src="images/six.jpg" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Packed Suffix Array</h3>
+												<p>Used: C++, RapMap API</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="col-md-4 portfolio-grids">
+									<div class="grid">
+										<a href="https://github.com/prachi108/Student-DBMS" target="_blank" Vclass="swipebox" title="Designed Flat File Database Management System using C language as a light weight database application (14 KB). Implemented 2 level file indexing using AVL search tree and linked list to ensure efficient insertion, deletion and search operations">
+											<img src="images/seven.jpg" alt="" class="img-responsive" />
+											<div class="figcaption">
+												<h3>Student Database Management System</h3>
+												<p>Used: C, file handling, data structures</p>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			-->
+			<!--ResponsiveTabs-->
+			<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+			<script type="text/javascript">
+				$(document).ready(function () {
+					$('#horizontalTab').easyResponsiveTabs({
+						type: 'default', //Types: default, vertical, accordion           
+						width: 'auto', //auto or any width like 600px
+						fit: true   // 100% fit in a container
+					});
+				});		
+			</script>
+			<!--//ResponsiveTabs-->
+			<!-- swipe box js -->
+			<script src="js/jquery.swipebox.min.js"></script> 
+				<script type="text/javascript">
+					jQuery(function($) {
+						$(".swipebox").swipebox();
+					});
+			</script>
+			<!-- //swipe box js -->
+		</div>
+	</div>
+	<!--//portfolio-->
+	<!--contact -->
+	<div class="welcome contact" id="contact">
+		<div class="container">
+			<h3 class="title">Let's Connect!</h3>
+			<div class="contact-row">
+				<div class="col-md-6 contact-left">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3015.392400766904!2d-73.1104911!3d40.9071413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e83f4a3023cc8b%3A0x1a1b76b67216bac2!2sChapin+Apartment+C%2C+Stony+Brook%2C+NY+11790!5e0!3m2!1sen!2sus!4v1490100529616"></iframe>
+				</div>
+				<div class="col-md-6 contact-right">
+					<div class="address-left" >
+						<p>700 Health Sciences Drive, A-2008C Chapin Apartments,<br> Stony Brook, New York, USA (11790)</p>
+					</div>
+					<div class="address-right" style="margin-bottom: 20%;">
+						<p>Cell Number :  +1-631-590-9957</p>
+						<p>E-mail : <a href="mailto:hmayani@cs.stonybrook.edu">hmayani@cs.stonybrook.edu</a></p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:mayanihiren@gmail.com">mayanihiren@gmail.com</a></p>
+					</div>
+					<!-- <div class="social" ><iframe width="100%" height="100%" frameborder="0" src="social.html"></iframe></div> -->
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--//contact -->
+	<!--footer-->
+	<div class="footer">
+		<div class="container">
+			<p>Last Updated: October 27, 2017
+		</div>
+	</div>
+	<!--//footer-->
+	<!--smooth-scrolling-of-move-up-->
+	<script type="text/javascript">
+		$(document).ready(function() {
+		
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+			};
+			
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			
+		});
+	</script>
+	<!--//smooth-scrolling-of-move-up-->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
